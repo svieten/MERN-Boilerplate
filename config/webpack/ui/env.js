@@ -12,7 +12,12 @@ if (process.argv.includes('--dev') || process.argv.includes('-d')) {
 
 module.exports = {
 	aliases: {
-		src: path.resolve(__dirname, '../../../src')
+		src: path.resolve(__dirname, '../../../src'),
+		containers: path.resolve(__dirname, '../../../src/containers'),
+		components: path.resolve(__dirname, '../../../src/components'),
+		actions: path.resolve(__dirname, '../../../src/actions'),
+		reducers: path.resolve(__dirname, '../../../src/reducers'),
+		types: path.resolve(__dirname, '../../../src/types')
 	},
 	environment: {
 		NODE_ENV: env,
