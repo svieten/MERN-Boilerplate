@@ -3,6 +3,7 @@ const webpack = require('webpack')
 const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin')
 const EventHooksPlugin = require('event-hooks-webpack-plugin')
 const StyleLintPlugin = require('stylelint-webpack-plugin')
+const DuplicatePackageCheckerPlugin = require("duplicate-package-checker-webpack-plugin")
 const hooks = require('../hooks.js')
 
 module.exports = {
@@ -101,6 +102,7 @@ module.exports = {
 		]
 	},
 	plugins: [
+		new DuplicatePackageCheckerPlugin(),
 		new StyleLintPlugin({
 			fix: true
 		}),

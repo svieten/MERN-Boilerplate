@@ -4,6 +4,7 @@ const UgilyJsPlugin = require('uglifyjs-webpack-plugin')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const WebpackPwaManifest = require('webpack-pwa-manifest')
 
 module.exports = {
 	devtool: 'source-map',
@@ -99,6 +100,13 @@ module.exports = {
 			filename: path.resolve(__dirname, '../../../dist/index.html'),
 			template: path.resolve(__dirname, '../../../public/index.html'),
 			inject: true
+		}),
+		new WebpackPwaManifest({
+			name: 'MERN Boilerplate',
+			short_name: 'MERN',
+			description: 'A MERN boilerplate to help jump start development.',
+			background_color: '#3aff3a',
+			crossorigin: 'use-credentials',
 		}),
 		new MiniCssExtractPlugin({
 			filename: 'build/styles-[hash].css'
