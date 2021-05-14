@@ -15,7 +15,8 @@ module.exports = {
 	mode: 'development',
 	output: {
 		path: path.resolve(__dirname, '../../../public/'),
-		filename: 'build/build.js'
+		filename: 'build/build.js',
+		publicPath: '/'
 	},
 	devServer: {
 		host: 'localhost',
